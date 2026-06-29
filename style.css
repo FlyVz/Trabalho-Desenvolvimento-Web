@@ -1,0 +1,517 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.painel-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.menu-lateral {
+  display: none;
+  width: 252px;
+  background-color: #001529;
+  color: white;
+  padding-top: 18px;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px 28px;
+  z-index: 1; 
+}
+
+.logo h2 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.menu-nav {
+  list-style: none;
+}
+
+.menu-nav li {
+  padding: 14px 19px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #a6adb4;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-nav li:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  color: white;
+}
+
+.menu-nav li:active {
+  background-color: #1890ff;
+  color: white;
+}
+
+.menu-nav .menu-ativo {
+  background-color: #1890ff;
+  color: white;
+}
+
+.conteudo-principal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.header-topo {
+  background-color: white;
+  height: 62px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 19px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-direita {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  gap: 22px;
+  color: #666;
+}
+
+.header-direita .material-icons {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.header-direita .material-icons:hover {
+  color: #1890ff;
+}
+
+.notificacao {
+  position: relative;
+}
+
+.notificacao::after {
+  content: '8';
+  position: absolute;
+  top: -6px;
+  right: -7px;
+  background: #f5222d;
+  color: white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.perfil-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+}
+
+.perfil-user:hover span {
+  color: #1890ff;
+}
+
+.avatar-user {
+  width: 31px;
+  height: 31px;
+  background-color: #1890ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.container-cards {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.card-vendas {
+  padding: 24px 14px 16px 21px;
+}
+
+.card-visitas {
+  padding: 19px;
+}
+
+.card-pagamentos {
+  padding: 17px;
+}
+
+.card-operacao {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 118px;
+}
+
+.card-petrobras {
+  display: none;
+}
+
+.card-petrobras img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.titulo-card {
+  display: flex;
+  justify-content: space-between;
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 9px;
+}
+
+.icone-info {
+  font-size: 15px;
+  color: #ccc;
+}
+
+.card h3 {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.divisor {
+  height: 1px;
+  background-color: #eee;
+  margin: 14px 0 11px;
+}
+
+.card p {
+  color: #666;
+  font-size: 13px;
+  font-weight: normal; 
+}
+
+.chart-horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 14px;
+  height: 43px;
+  justify-content: center;
+}
+
+.barra {
+  height: 9px;
+  border-radius: 0;
+}
+
+.barra-blue { background-color: #1890ff; }
+.barra-cyan { background-color: #13c2c2; }
+.barra-orange { background-color: #fa8c16; }
+
+.mini-chart-barras {
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
+  height: 58px;
+  margin-top: 6px;
+}
+
+.barra-v {
+  width: 14px;
+  background-color: #1890ff;
+  transition: opacity 0.2s;
+}
+
+.barra-v:hover {
+  opacity: 0.7;
+}
+
+.card-operacao h2 {
+  font-size: 31px;
+  margin-top: 9px;
+}
+
+.titulo-op {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+}
+
+.container-inferior {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 14px;
+  gap: 16px;
+}
+
+.area-chart {
+  background: white;
+  padding: 18px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.header-grafico {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 14px;
+  margin-bottom: 19px;
+}
+
+.tabs span {
+  margin-right: 19px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.tabs span:hover {
+  color: #1890ff;
+}
+
+.tab-ativa {
+  color: #1890ff;
+  border-bottom: 2px solid #1890ff;
+  padding-bottom: 15px;
+}
+
+.filtros span {
+  margin-right: 14px;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.filtros span:hover {
+  color: #1890ff;
+}
+
+.filtro-ativo {
+  color: #1890ff !important;
+}
+
+.picker-data {
+  color: #333 !important;
+  border: 1px solid #d9d9d9;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-size: 12px !important;
+}
+
+.area-chart h4 {
+  margin-bottom: 19px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#graficoVendas {
+  max-height: 250px;
+}
+
+.area-ranking {
+  background: white;
+  padding: 19px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.area-ranking h4 {
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.lista-ranking {
+  list-style: none;
+  background-color: transparent; 
+}
+
+.lista-ranking li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px;
+  font-size: 14px;
+  padding: 5px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.lista-ranking li:hover {
+  background-color: #f5f5f5;
+}
+
+.lista-ranking li:last-child {
+  margin-bottom: 0;
+  color: #aaa;
+}
+
+.circulo-rank {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 14px;
+  font-size: 11px;
+  flex-shrink: 0;
+  transition: background-color 0.3s;
+}
+
+.rank-topo {
+  background-color: #314659;
+  color: white;
+}
+
+.num-rank {
+  margin-left: auto;
+  color: #666;
+}
+
+@media (min-width: 768px) {
+  .painel-container {
+    flex-direction: row;
+  }
+
+  .menu-lateral {
+    display: flex;
+    width: 64px;
+  }
+
+  .logo {
+    justify-content: center;
+    padding: 0 0 28px;
+  }
+
+  .texto-logo {
+    display: none;
+  }
+
+  .menu-nav li {
+    justify-content: center;
+    padding: 14px;
+    gap: 0;
+  }
+
+  .texto-nav {
+    display: none;
+  }
+
+  .container-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 18px;
+    gap: 18px;
+  }
+
+  .header-grafico {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-lateral {
+    width: 252px;
+  }
+
+  .logo {
+    justify-content: flex-start;
+    padding: 0 19px 28px;
+  }
+
+  .texto-logo {
+    display: block;
+  }
+
+  .menu-nav li {
+    justify-content: flex-start;
+    padding: 14px 19px;
+    gap: 14px;
+  }
+
+  .texto-nav {
+    display: inline;
+  }
+
+  .container-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+    grid-template-rows: auto auto;
+    padding: 19px;
+    gap: 19px;
+  }
+
+  .card-petrobras {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 3;
+    grid-row: 1 / 3;
+    padding: 14px;
+    overflow: hidden;
+  }
+
+  .container-inferior {
+    flex-direction: row;
+    padding: 0 19px 19px;
+  }
+
+  .area-chart {
+    flex: 2;
+  }
+
+  .area-ranking {
+    flex: 1;
+  }
+}

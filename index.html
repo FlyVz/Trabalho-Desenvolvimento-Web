@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Estudante V2</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <div class="painel-container">
+
+      <aside class="menu-lateral">
+        <div class="logo">
+          <span class="material-icons">bubble_chart</span>
+          <h2 class="texto-logo">Fly's company</h2>
+        </div>
+        <ul class="menu-nav">
+          <li><span class="material-icons">dashboard</span><span class="texto-nav">Dashboard</span></li>
+          <li><span class="material-icons">edit_document</span><span class="texto-nav">Formulário</span></li>
+          <li><span class="material-icons">list_alt</span><span class="texto-nav">Lista</span></li>
+          <li><span class="material-icons">person</span><span class="texto-nav">Perfil</span></li>
+          <li class="menu-ativo"><span class="material-icons">check_circle</span><span class="texto-nav">Resultado</span></li>
+          <li><span class="material-icons">warning</span><span class="texto-nav">Exceção</span></li>
+          <li><span class="material-icons">account_circle</span><span class="texto-nav">Conta</span></li>
+        </ul>
+      </aside>
+
+      <div class="conteudo-principal">
+
+        <header class="header-topo">
+          <span class="material-icons menu-icon">menu</span>
+          <div class="header-direita">
+            <span class="material-icons">search</span>
+            <span class="material-icons">help_outline</span>
+            <span class="material-icons notificacao">notifications</span>
+            <div class="perfil-user">
+              <div class="avatar-user">F</div>
+              <span>fly</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="container-cards">
+
+          <div class="card card-vendas">
+            <div class="titulo-card">Vendas Totais <span class="material-icons icone-info">info</span></div>
+            <h3>R$ 100,000</h3>
+            <br>
+            <div class="divisor"></div>
+            <p>Vendas do Dia: R$10.000</p>
+          </div>
+
+          <div class="card card-visitas">
+            <div class="titulo-card">Visitas <span class="material-icons icone-info">info</span></div>
+            <h3>10.000</h3>
+            <div class="chart-horizontal">
+              <div class="barra barra-blue" style="width: 85%;"></div>
+              <div class="barra barra-cyan" style="width: 60%;"></div>
+              <div class="barra barra-orange" style="width: 40%;"></div>
+            </div>
+            <div class="divisor"></div>
+            <p>Visitas do Dia: 1.000</p>
+          </div>
+
+          <div class="card card-pagamentos">
+            <div class="titulo-card">Pagamentos <span class="material-icons icone-info">info</span></div>
+            <h3>1.000</h3>
+            <div class="mini-chart-barras">
+              <div class="barra-v" style="height: 40px"></div>
+              <div class="barra-v" style="height: 60px"></div>
+              <div class="barra-v" style="height: 30px"></div>
+              <div class="barra-v" style="height: 50px"></div>
+              <div class="barra-v" style="height: 40px"></div>
+            </div>
+            <div class="divisor"></div>
+            <p>Taxa de Conversão: 50%</p>
+          </div>
+
+          <div class="card card-operacao">
+            <p class="titulo-op">Eficiência da <br> Operação</p>
+            <h2>80%</h2>
+          </div>
+
+          <div class="card card-petrobras">
+            <img src="petrobras.png" alt="" />
+          </div>
+
+        </div>
+
+        <div class="container-inferior">
+
+          <div class="area-chart">
+            <div class="header-grafico">
+              <div class="tabs">
+                <span class="tab-ativa">Vendas</span>
+                <span>Visitas</span>
+              </div>
+              <div class="filtros">
+                <span>Diário</span>
+                <span>Semanal</span>
+                <span>Mensal</span>
+                <span class="filtro-ativo">Anual</span>
+                <span class="picker-data">01-01-1699 ~ 31-12-1699</span>
+              </div>
+            </div>
+            <h4>Tendência de Vendas da Loja</h4>
+            <canvas id="graficoVendas"></canvas>
+          </div>
+
+          <div class="area-ranking">
+            <h4>Ranking de Vendas</h4>
+            <ul class="lista-ranking">
+              <li><span class="circulo-rank rank-topo">1</span> Loja A <span class="num-rank">100</span></li>
+              <li><span class="circulo-rank rank-topo">2</span> Loja B <span class="num-rank">99</span></li>
+              <li><span class="circulo-rank rank-topo">3</span> Loja C <span class="num-rank">98</span></li>
+              <li><span class="circulo-rank">4</span> Loja D <span class="num-rank">97</span></li>
+              <li><span class="circulo-rank">5</span> Loja F <span class="num-rank">96</span></li>
+              <li><span class="circulo-rank">6</span> Loja L <span class="num-rank">95</span></li>
+              <li><span class="circulo-rank">7</span> Loja Y <span class="num-rank">15</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var ctx = document.getElementById('graficoVendas').getContext('2d');
+      var grafico = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['2017', '2018', '2019', '2020'],
+          datasets: [
+            {
+              data: [50, 15, 90, 30],
+              backgroundColor: '#4da1ff',
+              barThickness: 15,
+              borderRadius: 2
+            },
+            {
+              data: [35, 25, 40, 50],
+              backgroundColor: '#b3d8ff',
+              barThickness: 15,
+              borderRadius: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 60,
+              ticks: { stepSize: 5 }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
